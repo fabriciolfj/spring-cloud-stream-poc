@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    function:
+      definition: uppercase
+    stream:
+      bindings:
+        uppercase-in-0:
+          destination: devSessionProcessor
+      solace:
+        bindings:
+          uppercase-in-0:
+            consumer:
+              queueAdditionalSubscriptions: solace/devsess/apac/>,solace/devsess/*/officehours/202001*
+
